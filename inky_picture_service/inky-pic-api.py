@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
 
 inkyPicsDB = [
-        InkyPicture(id=0, title="The Happy Cacti says hi!", uri="test/sample/cacti-hi.jpg")
+        InkyPicture(id=0, title="The Happy Cacti say hi!", uri="test/asset/cacti-hi.jpg")
     ]
 
 @app.get("/pics/", response_model=List[InkyPicture])
@@ -22,7 +22,7 @@ async def get_all_pics():
 
 @app.get("/pics/daily")
 async def get_daily_inky_pic():
-    pic_path = Path("src/cacti-hi.jpg")
+    pic_path = Path("test/asset/cacti-hi.jpg")
     if not pic_path.is_file():
         raise HTTPException(status_code=404, detail="Picture not found")
     return FileResponse(pic_path)
@@ -31,7 +31,7 @@ async def get_daily_inky_pic():
 async def get_inky_pics_by_id(pic_id: int):
     if inkyPicsDB.get(pic_id, None) is not None:
         print(f'Requested pic: {pic_id}')
-        pic_path = Path("test/sample/cacti-hi.jpg")
+        pic_path = Path("test/asset/cacti-hi.jpg")
         if not pic_path.is_file():
             raise HTTPException(status_code=404, detail="Picture path error")
         return FileResponse(pic_path)

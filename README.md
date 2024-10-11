@@ -1,5 +1,7 @@
 # inky-picture-fastapi
- Fast Open API for inky-picture-service
+ Fast Open API for inky_picture_service.
+ This API will serve a new Portrait Device.
+
 
 # Development Setup
 1. Create a venv environment with Python 3.12
@@ -7,7 +9,7 @@ Linux:
 ```bash
 .\.venv\bin\activate
 ```
-MS:
+with Microsoft:
 ```bash
 .\\.venv\Scripts\Activate.ps1
 ```
@@ -25,3 +27,20 @@ go to api location:
 uvicorn inky-pic-api:app --reload --port 5000
 ```
 Press CTRL+C to quit
+
+or 
+```bash
+python inky_picture_service/inky-pic-api.py
+```
+
+## Installation
+
+```bash
+pip install -U inky_picture_service
+```
+
+Then you can run
+
+```bash
+inky_picture_service --help
+```

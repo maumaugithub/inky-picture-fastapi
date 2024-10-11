@@ -3,3 +3,4 @@ uvicorn
 pathlib
 pydantic
 pillow
+pytest
