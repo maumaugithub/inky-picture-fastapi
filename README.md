@@ -22,15 +22,23 @@ python --version
 pip install -r requirements.txt
 ```
 3. Run the API
-go to api location:
-```bash
-uvicorn inky-pic-api:app --reload --port 5000
-```
-Press CTRL+C to quit
 
-or 
+This triggers the Run panel on IntelliJ.
+
+Notice: the port here will be defined in config.
 ```bash
 python inky_picture_service/inky-pic-api.py
+```
+
+I have run with the previous command and with the snippet below on VSCode
+```bash
+uvicorn inky_picture_service/inky-pic-api:app --reload --port 5000
+```
+
+## Test with curl
+I will share the postman collection later ;)
+```bash
+curl --location 'http://127.0.0.1:9000/pics'
 ```
 
 ## Installation
